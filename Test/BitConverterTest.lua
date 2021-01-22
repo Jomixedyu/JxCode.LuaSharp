@@ -1,5 +1,5 @@
 
-Console.WriteLine("IsLittleEndian: ", System.BitConverter.IsLittleEndian)
+Console.WriteLine("IsLittleEndian: ", SysLib.BitConverter.IsLittleEndian)
 
 --number to bytes
 local bytes = BitConverter.GetBytesByInt(258)

@@ -7,7 +7,7 @@ dict:Add("user3", "pw3")
 Console.WriteLine("Count: ", dict:GetCount())
 
 --直接用key获取value
-Console.WriteLine("user1: ", dict["user1"])
+Console.WriteLine("user1: ", dict:Get("user1"))
 
 --三种遍历方式
 Console.WriteLine("ForEachMemberFunction:")
@@ -15,12 +15,12 @@ dict:ForEach(function(k, v)
     Console.WriteLine(k, v)
 end)
 
-Console.WriteLine("LuaForEach:")
-for key, value in pairs(dict) do
+Console.WriteLine("Enumerable:")
+for key, value in dict:GetEnumerator() do
     Console.WriteLine(key, value)
 end
 
-Console.WriteLine("Enumerable:")
+Console.WriteLine("Each:")
 for k, value in each(dict) do
     Console.WriteLine(k, value)
 end
@@ -39,6 +39,5 @@ end
 
 --可以用GetCount和#获取字典元素数量
 dict:Remove("user2")
-Console.WriteLine("Remove: ", dict:GetCount())
+Console.WriteLine("Removed Count: ", dict:GetCount())
 dict:Clear()
-Console.WriteLine("Clear: ", #dict)

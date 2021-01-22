@@ -1,6 +1,6 @@
 
 local path1 = "C:\\\\Windows"
-local path2 = "System32"
+local path2 = "SysLib32"
 
 local combinePath = Path.Combine(path1, path2)
 Console.WriteLine("CombinePath: "..combinePath)

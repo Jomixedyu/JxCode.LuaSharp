@@ -1,12 +1,13 @@
-local Person, base = class.extends("Test.OOPTest.Person", Object)
+local Person = class.extends("Test.OOPTest.Person", Object)
 function Person:constructor(name, age)
     self.name = name
     self.age = age
 end
 
-local Student = class.extends("Test.OOPTest.Student", Person)
+local Student, base= class.extends("Test.OOPTest.Student", Person)
 --构造函数中，前面的参数列表必须一致
 function Student:constructor(name, age, score)
+    base.constructor(self, name, age)
     self.score = score
 end
 function Student:ToString() --override const

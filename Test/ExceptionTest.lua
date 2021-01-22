@@ -12,20 +12,20 @@ try(function()
     TestFunction()
 end)
 .catch(gettype(ArgumentException), function(_e)
-    ---@type ArgumentException
+    ---@type SysLib.ArgumentException
     local e = _e
     Console.WriteLine("ArgumentException")
     Console.WriteLine(e:ToString())
 end)
 .catch(gettype(IOException), function(_e)
-    ---@type IOException
+    ---@type SysLib.IOException
     local e = _e
     Console.WriteLine("IOException")
     Console.WriteLine(e:ToString())
 end)
 .catch(gettype(Exception), function(_e)
     --捕捉所有框架类型的异常
-    ---@type Exception
+    ---@type SysLib.Exception
     local e = _e
     Console.WriteLine("Exception")
     Console.WriteLine(e:ToString())

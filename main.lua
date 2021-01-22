@@ -1,5 +1,6 @@
 
-require "System._loader"
+SYSLIB_SIMPLENAME = true
+require "SysLib._include"
 
 -- require "Test.IOFileTest"
 -- require "Test.IOPathTest"
