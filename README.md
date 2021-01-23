@@ -40,7 +40,6 @@ require "SysLib._include"
 其中```SYSLIB_SIMPLENAME = true```可以让该库中的类使用短名称，正常情况下使用类需要使用完全限定名如```System.Collection.List.New()```，如果在加载库前将该全局变量设置为true则可以使用短名称```List.New()```
 
 ## 类型与对象
-类型的实现结构在最下面  
 类使用class.extends关键字来继承，一个lua模块对应一个类，基类是可选的，如果不写则继承于SysLib.Object
 ```lua
 class.extends(类名, 基类)
@@ -196,17 +195,23 @@ local arr = List.New()
 arr:Add("苟利国家生死以")
 arr:Add("岂因祸福避趋之")
 --三种遍历方式 都可以
-for item in each(arr) do  --IEnumerator迭代器
-    Console.WriteLine("IEnumerator数组迭代器: "..item)
-end
-
-for index, value in ipairs(arr) do --lua迭代器
-    Console.WriteLine("Lua数组迭代器: "..value)
-end
-
-arr:ForEach(function(i, v)  --容器迭代器
-    Console.WriteLine("容器数组迭代器: "..v)
+-- 1.ForEach方法
+Console.WriteLine("ForEachMemberFunction:")
+list:ForEach(function(item)
+    Console.WriteLine(item)
 end)
+
+-- 2.迭代器
+Console.WriteLine("Enumerator:")
+for index, value in list:GetEnumerator() do
+    Console.WriteLine(value)
+end
+
+-- 3.或者使用each
+Console.WriteLine("Each:")
+for index, value in each(list) do
+    Console.WriteLine(value)
+end
 ```
 
 ## 抛出异常与捕捉异常
