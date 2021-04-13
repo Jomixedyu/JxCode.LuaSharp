@@ -2,14 +2,10 @@
 
 ![](https://img.shields.io/badge/Release-1.0.0-brightgreen)
 ![](https://img.shields.io/badge/License-Apache2.0-yellow)
-
-## Feature
-拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。 
+## Catalog
 - [JxCode.LuaSharp](#jxcodeluasharp)
+  - [Catalog](#catalog)
   - [Feature](#feature)
-    - [关于命名](#关于命名)
-    - [用途](#用途)
-    - [关于智能提示](#关于智能提示)
   - [将库引入项目](#将库引入项目)
   - [类型与对象](#类型与对象)
   - [迭代器](#迭代器)
@@ -25,16 +21,11 @@
   - [序列化](#序列化)
   - [实用工具](#实用工具)
 
-### 关于命名
-本框架使用Pascal命名规则，核心级函数（关键字）为全小写，私有成员可以使用m_member或者__menmber来提醒其他开发者不要来使用该成员。
-
-### 用途
-* 普通Lua开发
-* UnityEngine
-
-### 关于智能提示
-本框架推荐使用VSCode + EmmyLua插件进行开发，同时对VSCode的代码片段Snippets进行配置，可以达到同比VS的快速开发。  
-
+## Feature
+* 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。
+* 本框架使用Pascal命名规则，核心级函数（关键字）为全小写，私有成员可以使用m_member或者__menmber来提醒其他开发者不要来使用该成员。
+* 可以用于普通Lua开发或者嵌入其他程序中执行，可用于Unity开发。
+* 推荐使用VSCode + EmmyLua插件进行开发，同时对VSCode的代码片段Snippets进行配置，可以达到同比VS的快速开发。
 ## 将库引入项目
 将SysLib文件夹放进你的工程目录  
 在使用之前（一般在程序入口处）使用require加载库，如：
