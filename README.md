@@ -1,7 +1,9 @@
 # LuaSharp
 
+[https://img.shields.io/badge/Release-1.0.0-brightgreen]()
+
 ### 为什么说适合熟悉C#的Lua开发者
-* 使lua拥有面向对象的关键字与方法，关键字、方法名、基本采用自.Net规则。
+* 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。 
 
 ## 可以在这里看到的内容
 * 拥有类(class)，类型(Type)，实例(instance) 继承等面向对象的系统
