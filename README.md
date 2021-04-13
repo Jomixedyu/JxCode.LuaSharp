@@ -1,7 +1,6 @@
 # JxCode.LuaSharp
 
 ![](https://img.shields.io/badge/Release-1.0.0-brightgreen)
-![](https://img.shields.io/badge/blog-imxqy-blue)
 ![](https://img.shields.io/badge/License-Apache2.0-yellow)
 ### 为什么说适合熟悉C#的Lua开发者
 * 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。 
