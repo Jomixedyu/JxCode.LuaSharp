@@ -2,25 +2,27 @@
 
 ![](https://img.shields.io/badge/Release-1.0.0-brightgreen)
 ![](https://img.shields.io/badge/License-Apache2.0-yellow)
-### 为什么说适合熟悉C#的Lua开发者
-* 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。 
 
-## 可以在这里看到的内容
-* 拥有类(class)，类型(Type)，实例(instance) 继承等面向对象的系统
-* throw抛出异常与try...catch...finally异常捕捉
-* 直接在类中写重载运算符，如```function operatorAdd(target)```。
-* 支持gettype(class) 使用obj:GetType() 方法，每个类型对象唯一
-* istype关键字，istype(obj, class)，可判断实例是否属于类型。
-* List动态数组，Dictionary有序字典，Stack与Queue常用四容器。
-* 新增```each(ienumerable)```语法，只要是实现了GetEnumerator方法的容器，都可以使用each进行迭代。
-* 位运算
-* 支持Flag的枚举类
-* Delegate委托，支持多播，委托同时可以像C#一样支持使用Invoke()或者直接()执行。
-* 字符串类，让字符串变量拥有成员方法，如```str:Replace("a", "b")```
-* 字符串其他封装，如普通的Length()长度与CharLength()可以包含中文长度的函数等。
-* IO操作，File.WriteAllText 文件读写、复制、删除等操作方法，Path 路径相关操作类
-* 字符串构建器StringBuilder，减少字符串连接的GC
-* Lua对象的序列化与反序列化
+## Feature
+拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。 
+- [JxCode.LuaSharp](#jxcodeluasharp)
+  - [Feature](#feature)
+    - [关于命名](#关于命名)
+    - [用途](#用途)
+    - [关于智能提示](#关于智能提示)
+  - [将库引入项目](#将库引入项目)
+  - [类型与对象](#类型与对象)
+  - [迭代器](#迭代器)
+  - [字符串](#字符串)
+  - [枚举类型](#枚举类型)
+  - [运算符重载](#运算符重载)
+  - [类型转换](#类型转换)
+  - [容器](#容器)
+  - [抛出异常与捕捉异常](#抛出异常与捕捉异常)
+  - [文件处理](#文件处理)
+  - [位运算](#位运算)
+  - [委托](#委托)
+  - [额外的其他东西](#额外的其他东西)
 
 ### 关于命名
 本框架使用Pascal命名规则，核心级函数（关键字）为全小写，私有成员可以使用m_member或者__menmber来提醒其他开发者不要来使用该成员。
@@ -32,7 +34,7 @@
 ### 关于智能提示
 本框架推荐使用VSCode + EmmyLua插件进行开发，同时对VSCode的代码片段Snippets进行配置，可以达到同比VS的快速开发。  
 
-### 如何使用本库
+## 将库引入项目
 将SysLib文件夹放进你的工程目录  
 在使用之前（一般在程序入口处）使用require加载库，如：
 ```lua
@@ -98,6 +100,8 @@ Object.Equals(tc, target)
 ```lua
 local Manamger = class.static("Manamger")
 ```
+
+## 迭代器
 
 ## 字符串
 可以让字符串变量当做对象来使用，例如
@@ -279,6 +283,6 @@ end)
 C#在语言层面实现委托，将实例封装在委托对象中，而Lua则需要对对象进行绑定（类似于C++std）
 
 
-### 额外的其他东西
+## 额外的其他东西
 * 序列化方法，将lua表转换为字符串，或将字符串反序列化为lua语句/表
 * Lua表的拓展功能，数组拷贝、深拷贝等
