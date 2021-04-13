@@ -1,4 +1,4 @@
-# LuaSharp
+# JxCode.LuaSharp
 
 ![](https://img.shields.io/badge/Release-1.0.0-brightgreen)
 ![](https://img.shields.io/badge/blog-imxqy-blue)
