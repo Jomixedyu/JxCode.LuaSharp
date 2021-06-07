@@ -8,10 +8,10 @@
 * 本框架使用Pascal命名规则，核心级函数（关键字）为全小写，私有成员可以使用m_member或者__menmber来提醒其他开发者不要来使用该成员。
 * 可以用于普通Lua开发或者嵌入其他程序中执行，可用于Unity开发。
 * 推荐使用VSCode + EmmyLua插件进行开发，同时对VSCode的代码片段Snippets进行配置，可以达到同比VS的快速开发。
-## Catalog
+## Contents
 - [JxCode.LuaSharp](#jxcodeluasharp)
   - [Feature](#feature)
-  - [Catalog](#catalog)
+  - [Contents](#contents)
   - [将库引入项目](#将库引入项目)
   - [类型与对象](#类型与对象)
   - [迭代器](#迭代器)
