@@ -1,7 +1,7 @@
 # JxCode.LuaSharp
-
-![](https://img.shields.io/badge/Release-1.0.0-brightgreen)
-![](https://img.shields.io/badge/License-Apache2.0-yellow)
+![](https://img.shields.io/github/license/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
+![](https://img.shields.io/github/v/release/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
+![](https://img.shields.io/github/release-date/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
 
 ## Feature
 * 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。
