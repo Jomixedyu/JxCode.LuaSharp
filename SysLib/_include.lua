@@ -18,8 +18,6 @@ SysLib = {}
 require "SysLib.OOPCore"
 SysLib.Object = require "SysLib.Object" if _SMPL then Object = SysLib.Object end
 SysLib.Type = require "SysLib.Type"     if _SMPL then Type   = SysLib.Type   end
-SysLib.Nullable = require "SysLib.Nullable" if _SMPL then Nullable = SysLib.Nullable end
-require "SysLib.NullObject"
 --Exception
 SysLib.Exception                   = require "SysLib.Exception.Exception"                   if _SMPL then Exception                   = SysLib.Exception                   end
 SysLib.ApplicationException        = require "SysLib.Exception.ApplicationException"        if _SMPL then ApplicationException        = SysLib.ApplicationException        end
