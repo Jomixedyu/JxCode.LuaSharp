@@ -17,10 +17,6 @@ function Convert.ToBoolean(v)
     elseif _type == 'number' then
         return v ~= 0
     elseif _type == 'string' then
-        local t = {
-            ['true'] = true,
-            ['false'] = false,
-        }
         local str = v:ToLower()
         if str == "true" then
             return true
