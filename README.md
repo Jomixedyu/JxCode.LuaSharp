@@ -3,7 +3,12 @@
 ![](https://img.shields.io/github/v/release/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
 ![](https://img.shields.io/github/release-date/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
 
-该库提供了类型系统、常用容器、常用类库与异常处理等工具，可以轻量开发简单的程序，本着lua语言的定位，该库并不会增加更多繁重的内容，复杂功能推荐使用宿主语言实现。
+该库提供了类型系统、常用容器、常用类库与异常处理等工具，拥有实用且轻量的工具可以轻量开发简单的程序，本着lua语言的定位，该库并不会增加更多繁重的内容，复杂功能推荐使用宿主语言实现。  
+
+```lua
+local n = ("notice: {0} {1} - {2}"):Format("hello", "Syslib", 2.0)
+```
+
 ## Feature
 * 拥有C#关键字与类型系统的Lua面向对象系统，拥有常用的容器、类库、try-catch异常处理等工具，更适用于熟悉.Net的Lua/Unity开发者。
 * 本框架使用Pascal命名规则，核心级函数（关键字）为全小写，私有成员可以使用m_member或者__menmber来提醒其他开发者不要来使用该成员。
@@ -15,12 +20,12 @@
   - [Contents](#contents)
   - [将库引入项目](#将库引入项目)
   - [类型与对象](#类型与对象)
-  - [迭代器](#迭代器)
   - [字符串](#字符串)
   - [位运算](#位运算)
   - [枚举类型与Flag](#枚举类型与flag)
   - [运算符重载](#运算符重载)
   - [类型转换](#类型转换)
+  - [迭代器](#迭代器)
   - [容器](#容器)
   - [抛出异常与捕捉异常](#抛出异常与捕捉异常)
   - [文件处理](#文件处理)
@@ -95,8 +100,6 @@ Object.Equals(tc, target)
 ```lua
 local Manamger = class.static("Manamger")
 ```
-
-## 迭代器
 
 ## 字符串
 可以让字符串变量当做对象来使用，例如
@@ -191,6 +194,11 @@ local cbo2 = Convert.ToBoolean("true")
 local cbo3 = bool.Parse("true")
 ```
 BitConverter 
+
+## 迭代器
+lua默认的迭代器只可以对table进行访问，但是该库的四大容器并不是直接储存在table中，这也是为了避免原方法被覆盖，所以可以使用each来遍历四大迭代器。  
+如果想继续使用lua原生迭代器，可以使用容器的GetEnumerator方法获取迭代器。  
+同样的，容器需要扩展时
 
 ## 容器
 常用的List和Dictionary实现了GetEnumerator方法，可以直接使用each迭代器，同时也支持lua原版的ipairs与pairs迭代器，并且容器拥有ForEach方法迭代器。  

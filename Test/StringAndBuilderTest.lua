@@ -15,6 +15,10 @@ Console.WriteLine("LastIndexOf: "..tostring(str:LastIndexOf('o')))
 local space = "  "..str.."  "
 Console.WriteLine("Trim: "..space:Trim())
 
+-- Format
+local time = ("time: {0}:{1}"):Format(20, 36)
+assert(time == "time: 20:36")
+
 --中文字符的长度获取
 local zhStr = "Hello渔"
 Console.WriteLine("zhStr len: "..tostring(zhStr:Length())) --result: 8
@@ -26,6 +30,8 @@ Console.WriteLine("charArr: "..Serialization.Serialize(strCharArr))
 local newStr = String.New(strCharArr)
 Console.WriteLine("NewString: "..newStr)
 
+
+-- StringBuilder
 local sb = StringBuilder.New()
 sb:Append("hello")
 sb:AppendLine("world")
