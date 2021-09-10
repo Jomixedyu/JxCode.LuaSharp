@@ -1,7 +1,7 @@
 # JxCode.LuaSharp
-![](https://img.shields.io/github/license/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
-![](https://img.shields.io/github/v/release/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
-![](https://img.shields.io/github/release-date/Jayshonyves/JxCode.LuaSharp?style=for-the-badge)
+![](https://img.shields.io/github/license/JomiXedYu/JxCode.LuaSharp?style=for-the-badge)
+![](https://img.shields.io/github/v/release/JomiXedYu/JxCode.LuaSharp?style=for-the-badge)
+![](https://img.shields.io/github/release-date/JomiXedYu/JxCode.LuaSharp?style=for-the-badge)
 
 该库提供了类型系统、常用容器、常用类库与异常处理等工具，拥有实用且轻量的工具可以轻量开发简单的程序，本着lua语言的定位，该库并不会增加更多繁重的内容，复杂功能推荐使用宿主语言实现。  
 
