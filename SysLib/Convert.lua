@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/15 23:59
 --- Description  : 类型转换操作类
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Convert
 local Convert = class.static("SysLib.Convert")

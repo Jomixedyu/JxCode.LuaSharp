@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/16 00:00
 --- Description  : 数组封装类，可以用lua迭代器访问
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.List : SysLib.Object
 local List, base = class.extends("SysLib.Collections.List", SysLib.Object)

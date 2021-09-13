@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/14 00:25
 --- Description  : 字符串构建
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Text.StringBuilder : SysLib.Object
 local StringBuilder, base = class.extends("SysLib.Text.StringBuilder", SysLib.Object)

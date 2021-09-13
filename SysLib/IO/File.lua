@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/14 00:19
 --- Description  : 文件读写
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
 ---@class SysLib.IO.File

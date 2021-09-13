@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2021/09/13 15:24
 --- Description  : Events
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Event : SysLib.Object
 local Event = class.extends("SysLib.Event", SysLib.Object)

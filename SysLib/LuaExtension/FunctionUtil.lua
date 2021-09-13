@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/20 20:02
 --- Description  : 
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class FunctionUtil
 FunctionUtil = {}

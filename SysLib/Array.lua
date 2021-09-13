@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/06/04 03:02
 --- Description  : 
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
 ---@class System.Array

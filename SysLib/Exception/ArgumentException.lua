@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/10/04 01:48
 --- Description  : 
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
 ---@class SysLib.ArgumentException : SysLib.Exception

@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/15 23:57
 --- Description  : 字符串处理
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 local String = {}
 

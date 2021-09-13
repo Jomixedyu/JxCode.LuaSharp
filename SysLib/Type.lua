@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/15 23:55
 --- Description  : 类型对象
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Type : SysLib.Object
 ---@field New fun(name, protoType, baseProtoType)

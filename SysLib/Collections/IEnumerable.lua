@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/14 01:38
 --- Description  : 
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---
 ---@class SysLib.IEnumerable : SysLib.Object

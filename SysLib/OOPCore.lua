@@ -1,5 +1,5 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/15 23:55
 --- Description  : 基础函数
 ---    核心关键字
@@ -10,6 +10,7 @@
 ---        istype(obj, type) ---判断实例是否为某类型或某类型的子类
 ---        isapptype(type) 检查类型是否为框架内类型
 ---        isappinstance(instance) 检查对象是否为框架内实例
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 local getmetatable = getmetatable
 local setmetatable = setmetatable

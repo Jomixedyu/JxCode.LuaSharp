@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/15 23:59
 --- Description  : 时间与日期操作类
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.DateTime : SysLib.Object
 local DateTime, base = class.extends("SysLib.DateTime", SysLib.Object)

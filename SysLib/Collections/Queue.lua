@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/17 16:48
 --- Description  : 
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.Queue : SysLib.Object
 local Queue, base = class.extends("SysLib.Collections.Queue", SysLib.Object)

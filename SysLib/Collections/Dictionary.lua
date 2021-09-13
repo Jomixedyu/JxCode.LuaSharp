@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/02/23 19:31
 --- Description  : 有序字典
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.Dictionary : SysLib.Object
 local Dictionary, base = class.extends("SysLib.Collections.Dictionary", SysLib.Object)
@@ -15,7 +16,6 @@ local function indexof(table, key)
     return -1
 end
 
----public:
 function Dictionary:constructor()
     self.m_dict = {}
     self.m_index = {}

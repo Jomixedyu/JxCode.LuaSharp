@@ -1,7 +1,8 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/10/06 21:28
 --- Description  : 字节类型转换
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
 local BitConverter = class.static("SysLib.BitConverter")

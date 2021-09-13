@@ -1,9 +1,10 @@
 -------------------ModuleInfo-------------------
---- Author       : jx
+--- Author       : jxy
 --- Date         : 2020/03/08 21:12
 --- Description  : SysLibLoader
 ---                为了方便起见，只有SysLib中的类型注释不是完整路径
 ---                如---@class Dictionary
+--- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
 if SYSLIB_SIMPLENAME == nil then
