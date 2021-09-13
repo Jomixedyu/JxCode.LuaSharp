@@ -23,14 +23,8 @@ function Object:Dispose()
 
 end
 --virtual
-function Object:Equals(b, c)
-    --判断对象地址
-    if c == nil then
-        --instance
-        c = b
-        b = self
-    end
-    return b == c
+function Object:Equals(target)
+    return self == target
 end
 
 ---@return Type

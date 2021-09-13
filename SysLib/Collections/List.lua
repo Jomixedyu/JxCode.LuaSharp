@@ -106,4 +106,19 @@ function List:GetEnumerator()
     end
 end
 
+function List:Equals(target)
+    ---@type SysLib.Collections.List
+    local list = target
+    if self:GetCount() ~= list:GetCount() then
+        return false
+    end
+
+    for i = 1, self:GetCount() do
+        if self:Get(i) ~= list:Get(i) then
+            return false
+        end
+    end
+    return true
+end
+
 return List

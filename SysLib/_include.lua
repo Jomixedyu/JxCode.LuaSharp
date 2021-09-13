@@ -58,6 +58,7 @@ SysLib.Runtime = {}
 SysLib.Runtime.Serialization = require "SysLib.Runtime.Serialization" if _SMPL then Serialization = SysLib.Runtime.Serialization end
 
 SysLib.Console = require "SysLib.Console"      if _SMPL then Console   = SysLib.Console   end
+SysLib.Event = require "SysLib.Event"          if _SMPL then Event     = SysLib.Event     end
 SysLib.Delegate = require "SysLib.Delegate"    if _SMPL then Delegate  = SysLib.Delegate  end
 SysLib.Convert = require "SysLib.Convert"      if _SMPL then Convert   = SysLib.Convert   end
 SysLib.Activator = require "SysLib.Activator"  if _SMPL then Activator = SysLib.Activator end

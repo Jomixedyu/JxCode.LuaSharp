@@ -26,6 +26,7 @@
   - [抛出异常与捕捉异常](#抛出异常与捕捉异常)
   - [文件处理](#文件处理)
   - [委托](#委托)
+  - [事件](#事件)
   - [序列化](#序列化)
   - [实用工具](#实用工具)
 
@@ -280,7 +281,45 @@ end)
 
 
 ## 委托
-C#在语言层面实现委托，将实例封装在委托对象中，而Lua则需要对对象进行绑定（类似于C++std）
+无实例的函数委托
+```lua
+local function SetAge1(i)
+    Console.WriteLine("setAge1:", i)
+end
+local delegate = Delegate.New(nil, SetAge1)
+--使用Invoke调用
+delegate:Invoke(2)
+```
+有实例的函数委托
+```lua
+local TestObject = class.extends("Test.TestObject", Object)
+function TestObject:SetNumber(i)
+    Console.WriteLine("SetNumber:", i)
+end
+
+local testObj = TestObject.New()
+--提供实例
+local deleg = Delegate.New(testObj, TestObject.SetNumber)
+--不光可以使用Invoke，还可以直接用()
+deleg(5)
+```
+
+## 事件
+事件采用多播委托的形式实现
+```lua
+local function EventFun1()
+    Console.WriteLine("EventFun1")
+end
+
+local function EventFun2()
+    Console.WriteLine("EventFun2")
+end
+
+local event = Event.New()
+event:Add(nil, EventFun1)
+event:Add(Delegate.New(nil, EventFun2))
+event:Invoke()
+```
 
 ## 序列化
 * 序列化方法，将lua表转换为字符串，或将字符串反序列化为lua语句/表
