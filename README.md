@@ -267,19 +267,25 @@ end)
 ```
 
 ## 文件处理
-* File.ReadAllText(path)
-* File.ReadAllLines(path)
-* File.WriteAllText(path, content)
-* File.WriteAllLines(path, contents)
-* File.AppendAllText(path, content)
-* File.AppendAllLines(path, contents)
-* File.Exist(path)
-* File.Copy(path, targetPath)
-* File.Move(path, targetPath)
-* File.Delete(path)
+文件读写提供函数：  
+- File.ReadAllText(path)
+- File.ReadAllLines(path)
+- File.WriteAllText(path, content)
+- File.WriteAllLines(path, contents)
+- File.AppendAllText(path, content)
+- File.AppendAllLines(path, contents)
+- File.Exist(path)
+- File.Copy(path, targetPath)
+- File.Move(path, targetPath)
+- File.Delete(path)
 
-
-
+路径操作函数：  
+- Path.IsRootPath(path)
+- Path.Combine(path1, path2)
+- Path.GetDirectoryName(path)
+- Path.GetExtension(path)
+- Path.GetFileName(path)
+- Path.GetFileNameWithoutExtension(path)
 ## 委托
 无实例的函数委托
 ```lua
