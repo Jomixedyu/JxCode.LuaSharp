@@ -80,7 +80,7 @@ function Dictionary:GetEnumerator()
     return function()
         i = i + 1
         local key = self.m_index[i]
-        return key, self.m_index[key]
+        return key, self.m_dict[key]
     end
 end
 
