@@ -13,7 +13,7 @@ local File = class.static("SysLib.IO.File")
 ---@return string
 function File.ReadAllText(path)
     local r = File.ReadAllLines(path)
-    return table.concat(r, "\n")
+    return table.concat(r:GetTableRef(), "\n")
 end
 
 ---读取文件中的所有行
