@@ -52,12 +52,7 @@ end
 ---字符串格式化
 ---@return string
 function String.Format(str, ...)
-    local parms = {...}
-    local result = str
-    for index, value in ipairs(parms) do
-        result = String.Replace(result, "{"..tostring(index-1).."}", tostring(value))
-    end
-    return result
+    return string.format(str, ...)
 end
 
 ---@return boolean
@@ -87,14 +82,13 @@ end
 
 ---字符串转换为字节数组
 ---@return table
-function String:ToCharArray()
+function String:ToBytes()
     local tb = {}
     for i = 1, #self do
         tb[i] = string.byte(self, i)
     end
     return tb
 end
-
 
 ---UTF8字符串长度
 ---@return number
@@ -140,8 +134,8 @@ function String:IndexOf(str)
         return -1
     end
     
-    local char = str:ToCharArray()
-    local selfChar = self:ToCharArray()
+    local char = str:ToBytes()
+    local selfChar = self:ToBytes()
 
     for i = 1, #selfChar do
         if selfChar[i] == char[1] and #char <= #selfChar - i then
@@ -170,9 +164,9 @@ function String:LastIndexOf(str)
         return -1
     end
 
-    local char = str:ToCharArray()
+    local char = str:ToBytes()
     local charLen = #char
-    local selfChar = self:ToCharArray()
+    local selfChar = self:ToBytes()
     local selfCharLen = #selfChar
 
     for i = selfCharLen, 1, -1 do
@@ -194,6 +188,7 @@ function String:LastIndexOf(str)
     -- return string.find(self, str, -1)
 end
 
+
 string.Split = String.Split
 string.Replace = String.Replace
 string.Trim = String.Trim
@@ -205,7 +200,7 @@ string.StartsWith = String.StartsWith
 string.EndsWith = String.EndsWith
 string.Substring = String.Substring
 string.Length = String.Length
-string.ToCharArray = String.ToCharArray
+string.ToBytes = String.ToBytes
 string.CharLength = String.CharLength
 string.IndexOf = String.IndexOf
 string.LastIndexOf = String.LastIndexOf
