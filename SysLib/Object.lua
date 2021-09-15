@@ -13,7 +13,7 @@ local Object = class.extends("SysLib.Object")
 local _new = Object.New
 ---@return self
 function Object.New()
-    _new()
+    return _new()
 end
 
 function Object:constructor()
