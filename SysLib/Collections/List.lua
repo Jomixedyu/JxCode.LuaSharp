@@ -27,6 +27,20 @@ function List:AddRange(ienumerator)
     end
 end
 
+function List:AddTableRange(tb)
+    for index, value in ipairs(tb) do
+        self:Add(value)
+    end
+end
+
+function List:AddListRange(list, startIndex, count)
+    local c = count or list:GetCount()
+    local sti = startIndex or 1
+    for i = sti, c do
+        self:Add(list:Get(i))
+    end
+end
+
 function List:Get(index)
     return self.m_arr[index]
 end
@@ -120,6 +134,18 @@ function List:Equals(target)
         end
     end
     return true
+end
+
+function List:GetTableRef()
+    return self.m_arr
+end
+
+function List:GetTable()
+    local tb = {}
+    for i = 1, self.m_count do
+        tb[i] = self.m_arr[i]
+    end
+    return tb
 end
 
 return List
