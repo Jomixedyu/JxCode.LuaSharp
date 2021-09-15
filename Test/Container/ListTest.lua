@@ -5,7 +5,7 @@ list:Add("item2")
 list:Add(nil)
 list:Add("item3")
 
-Console.WriteLine("listCount:", list:GetCount())
+assert(list:GetCount() == 4)
 
 --可以使用三种遍历方式
 

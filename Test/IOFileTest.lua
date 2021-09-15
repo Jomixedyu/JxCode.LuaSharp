@@ -12,7 +12,7 @@ File.Move("D:\\copy.txt", "D:\\copyMove.txt")
 --读取
 local str = File.ReadAllText(aFile)
 
-Console.WriteLine(str)
+assert(str == content.."\nAppendContent")
 
 File.Delete(aFile)
 File.Delete("D:\\copyMove.txt")

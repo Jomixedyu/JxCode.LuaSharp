@@ -1,4 +1,5 @@
 
+local errCode = 0
 
 local function TestFunction()
     throw(ArgumentException.New("参数错误"))
@@ -12,30 +13,19 @@ try(function()
     TestFunction()
 end)
 .catch(gettype(ArgumentException), function(_e)
-    ---@type SysLib.ArgumentException
-    local e = _e
-    Console.WriteLine("ArgumentException")
-    Console.WriteLine(e:ToString())
+    errCode = 1
 end)
 .catch(gettype(IOException), function(_e)
-    ---@type SysLib.IOException
-    local e = _e
-    Console.WriteLine("IOException")
-    Console.WriteLine(e:ToString())
+    errCode = 2
 end)
 .catch(gettype(Exception), function(_e)
-    --捕捉所有框架类型的异常
-    ---@type SysLib.Exception
-    local e = _e
-    Console.WriteLine("Exception")
-    Console.WriteLine(e:ToString())
+    errCode = 3
 end)
 .catch(function(e)
-    --捕捉所有其他异常
-    Console.WriteLine("other exception")
-    Console.WriteLine(tostring(e))
+    errCode = 4
 end)
 .finally(function()
     --无论是否发生异常该函数必定执行
-    Console.WriteLine("finally function")
 end)
+
+assert(errCode == 1)

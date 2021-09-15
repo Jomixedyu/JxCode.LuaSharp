@@ -1,43 +1,44 @@
 local dict = Dictionary.New()
 
-dict:Add("user1", "pw1")
-dict:Add("user2", "pw2")
-dict:Add("user3", "pw3")
+dict:Add("user1", 1)
+dict:Add("user2", 2)
+dict:Add("user3", 3)
 
-Console.WriteLine("Count: ", dict:GetCount())
+assert(dict:GetCount() == 3)
 
---直接用key获取value
-Console.WriteLine("user1: ", dict:Get("user1"))
+assert(dict:Get("user1") == 1)
+assert(dict:Get("user3") == 3)
 
 --三种遍历方式
-Console.WriteLine("ForEachMemberFunction:")
+
+local e1 = 0
+local e1k = ""
 dict:ForEach(function(k, v)
-    Console.WriteLine(k, v)
+    e1k = e1k..k
+    e1 = e1 + v
 end)
+assert(e1k == "user1user2user3")
+assert(e1 == 6)
 
-Console.WriteLine("Enumerable:")
-for key, value in dict:GetEnumerator() do
-    Console.WriteLine(key, value)
+
+local e2 = 0
+local e2k = ""
+for k, v in dict:GetEnumerator() do
+    e2k = e2k..k
+    e2 = e2 + v
 end
+assert(e2k == "user1user2user3")
+assert(e2 == 6)
 
-Console.WriteLine("Each:")
-for k, value in each(dict) do
-    Console.WriteLine(k, value)
+local e3 = 0
+local e3k = ""
+for k, v in each(dict) do
+    e3k = e3k..k
+    e3 = e3 + v
 end
+assert(e3k == "user1user2user3")
+assert(e3 == 6)
 
-Console.WriteLine("ContainsKey user3: ", dict:ContainsKey("user3"))
-Console.WriteLine("ContainsKey user4: ", dict:ContainsKey("user4"))
-
-Console.WriteLine("Dict Count: ", dict:GetCount())
-
-local keys = dict:GetKeys()
-local values = dict:GetValues()
-
-for i = 1, dict:GetCount() do
-    Console.WriteLine("keyValuePair: ", keys[i], values[i])
-end
-
---可以用GetCount和#获取字典元素数量
 dict:Remove("user2")
-Console.WriteLine("Removed Count: ", dict:GetCount())
+assert(dict:GetCount() == 2)
 dict:Clear()

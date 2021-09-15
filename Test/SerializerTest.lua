@@ -7,12 +7,8 @@ local struct = {
     }
 }
 local luaSerData = Serialization.Serialize(struct)
+local luaDeserObj = Serialization.Deserialize(luaSerData)
 
-Console.WriteLine("SerializeData: \n"..luaSerData)
-
-
-local deserObj = Serialization.Deserialize(luaSerData)
-Console.WriteLine("Deserialize:")
-Console.WriteLine(deserObj.name)
-Console.WriteLine(deserObj.age)
-Console.WriteLine(deserObj.score.english)
+assert(luaDeserObj.name == "jason")
+assert(luaDeserObj.age == 17)
+assert(luaDeserObj.score.english == 100)

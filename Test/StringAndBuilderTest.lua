@@ -1,38 +1,58 @@
-
 local str = "Hello_World"
 --常用函数
-Console.WriteLine("lower: "..str:ToLower())
-Console.WriteLine("upper: "..str:ToUpper())
-Console.WriteLine("StartWith Hello: "..tostring(str:StartsWith("Hello")))
-Console.WriteLine("EndWith Worl: "..tostring(str:EndsWith("Worl")))
-local splitArr = str:Split('_')
-Console.WriteLine("Split: "..splitArr[1]..", "..splitArr[2])
-Console.WriteLine("Contains _: "..tostring(str:Contains('_')))
+assert(str:ToLower() == "hello_world")
+assert(str:ToUpper() == "HELLO_WORLD")
 
-Console.WriteLine("IndexOf: "..tostring(str:IndexOf('o')))
-Console.WriteLine("LastIndexOf: "..tostring(str:LastIndexOf('o')))
+assert(str:StartsWith("Hello") == true)
+assert(str:StartsWith("wHello") == false)
 
-local space = "  "..str.."  "
-Console.WriteLine("Trim: "..space:Trim())
+assert(str:EndsWith("World") == true)
+assert(str:EndsWith("Worl") == false)
 
--- Format
-local time = ("time: {0}:{1}"):Format(20, 36)
-assert(time == "time: 20:36")
+local splitArr = str:Split("_")
+assert(splitArr[1] == "Hello")
+assert(splitArr[2] == "World")
+
+assert(str:Contains("_") == true)
+assert(str:Contains(".") == false)
+
+assert(str:IndexOf("o") == 5)
+assert(str:LastIndexOf("o") == 8)
+
+local space = "  " .. str .. "  "
+assert(space:Trim() == str)
 
 --中文字符的长度获取
 local zhStr = "Hello渔"
-Console.WriteLine("zhStr len: "..tostring(zhStr:Length())) --result: 8
-Console.WriteLine("zhStr charlen: "..tostring(zhStr:CharLength())) --result: 6
+assert(zhStr:Length() == 8)
+assert(zhStr:CharLength() == 6)
 
 --字符数组
-local strCharArr = str:ToCharArray()
-Console.WriteLine("charArr: "..Serialization.Serialize(strCharArr))
-local newStr = String.New(strCharArr)
-Console.WriteLine("NewString: "..newStr)
+local strCharArr = str:ToBytes()
+assert(
+    table.equals(
+        strCharArr,
+        {
+            string.byte("H"),
+            string.byte("e"),
+            string.byte("l"),
+            string.byte("l"),
+            string.byte("o"),
+            string.byte("_"),
+            string.byte("W"),
+            string.byte("o"),
+            string.byte("r"),
+            string.byte("l"),
+            string.byte("d")
+        }
+    )
+)
 
+local newStr = String.New(strCharArr)
+assert(newStr == str)
 
 -- StringBuilder
 local sb = StringBuilder.New()
-sb:Append("hello")
-sb:AppendLine("world")
-Console.WriteLine("StringBuilder:", sb:ToString())
+sb:AppendLine("hello")
+sb:Append("world")
+assert(sb:ToString() == "hello\nworld")
