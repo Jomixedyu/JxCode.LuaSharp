@@ -4,7 +4,7 @@
 --- Description  : 
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
-function table.copyArray(tab)
+function table.copyarr(tab)
     local tmp = {}
     for i = 1, #tab do
         tmp[i] = tab[i]
@@ -12,7 +12,7 @@ function table.copyArray(tab)
     return tmp
 end
 
-function table.deepCopy(object)
+function table.deepcopy(object)
 	local lookup_table = {}
 	
 	local function _copy(object)
@@ -49,4 +49,13 @@ function table.count(tab)
 		len = len + 1
 	end
 	return len
+end
+
+function table.equals(a, b)
+	for key, value in pairs(a) do
+		if value ~= b[key] then
+			return false
+		end
+	end
+	return true
 end

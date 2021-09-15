@@ -86,7 +86,7 @@ end
 
 ---@return table
 function Dictionary:GetKeys()
-    return table.copyArray(self.m_index)
+    return table.copyarr(self.m_index)
 end
 
 ---@return table
