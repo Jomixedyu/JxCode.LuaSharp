@@ -1,19 +1,14 @@
 local stack = Stack.New()
 
-stack:Push("one")
-stack:Push("two")
-stack:Push("three")
+stack:Push("v1")
+stack:Push("v2")
 
+assert(stack:GetCount() == 2)
 
-Console.WriteLine("Count:", stack:GetCount())
-
-Console.WriteLine("Peek:", stack:Peek())
-
-Console.WriteLine("Pop:", stack:Pop())
-Console.WriteLine("Pop:", stack:Pop())
-
-Console.WriteLine("Count:", stack:GetCount())
+assert(stack:Peek() == "v2")
+assert(stack:Pop() == "v2")
+assert(stack:Peek() == "v1")
+assert(stack:GetCount() == 1)
 
 stack:Clear()
-
-Console.WriteLine("Clear:", stack:GetCount())
+assert(stack:GetCount() == 0)
