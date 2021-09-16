@@ -1,7 +1,7 @@
 -------------------ModuleInfo-------------------
 --- Author       : jxy
 --- Date         : 2020/02/16 00:00
---- Description  : 数组封装类，可以用lua迭代器访问
+--- Description  : 数组封装类
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.List : SysLib.Object
@@ -21,8 +21,8 @@ function List:Add(item)
     self.m_arr[self.m_count] = item
 end
 
-function List:AddRange(ienumerator)
-    for item in each(ienumerator) do
+function List:AddRange(enumerable)
+    for item in each(enumerable) do
         self:Add(item)
     end
 end
@@ -49,6 +49,7 @@ function List:Clear()
     for i = 1, self.m_count do
         self.m_arr[i] = nil
     end
+    self.m_count = 0
 end
 
 ---@return boolean

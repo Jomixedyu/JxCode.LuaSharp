@@ -1,21 +1,21 @@
 local queue = Queue.New()
 
-queue:Enqueue("value1")
-queue:Enqueue("value2")
-queue:Enqueue("value3")
+queue:Enqueue("v1")
+queue:Enqueue("v2")
 
-Console.WriteLine("Count:", queue:GetCount())
+assert(queue:GetCount() == 2)
 
+local it = ""
 queue:ForEach(function(item)
-    Console.WriteLine("item: ", item) 
+    it = it .. item
 end)
 
-Console.WriteLine("Peek:", queue:Peek())
+assert(it == "v1v2")
 
-Console.WriteLine("Dequeue:", queue:Dequeue())
-Console.WriteLine("Dequeue:", queue:Dequeue())
-
-Console.WriteLine("Count:", queue:GetCount())
+assert(queue:Peek() == "v1")
+assert(queue:Dequeue() == "v1")
+assert(queue:Peek() == "v2")
+assert(queue:GetCount() == 1)
 
 queue:Clear()
-Console.WriteLine("Clear:", queue:GetCount())
+assert(queue:GetCount() == 0)

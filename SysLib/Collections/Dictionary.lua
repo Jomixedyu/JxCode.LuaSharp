@@ -44,9 +44,9 @@ function Dictionary:Remove(key)
 end
 
 function Dictionary:Clear()
-    for _, key in ipairs(self.m_index) do
-        self:Remove(key)
-    end
+    self.m_count = 0
+    self.m_dict = {}
+    self.m_index = {}
 end
 
 ---@return number
