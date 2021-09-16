@@ -2,7 +2,7 @@
 --- Author       : jxy
 --- Date         : 2020/03/08 21:12
 --- Description  : SysLibLoader
----                为了方便起见，只有SysLib中的类型注释不是完整路径
+---                为了方便起见，应只有SysLib中的类型注释不是完整路径，但可以使用SYSLIB_SIMPLENAME来改变
 ---                如---@class Dictionary
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
@@ -63,3 +63,7 @@ SysLib.Event = require "SysLib.Event"          if _SMPL then Event     = SysLib.
 SysLib.Delegate = require "SysLib.Delegate"    if _SMPL then Delegate  = SysLib.Delegate  end
 SysLib.Convert = require "SysLib.Convert"      if _SMPL then Convert   = SysLib.Convert   end
 SysLib.Activator = require "SysLib.Activator"  if _SMPL then Activator = SysLib.Activator end
+
+if _DEBUG then
+    require "SysLib.UnitTest"
+end
