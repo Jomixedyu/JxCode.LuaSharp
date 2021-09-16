@@ -27,6 +27,7 @@
   - [文件处理](#文件处理)
   - [委托](#委托)
   - [事件](#事件)
+  - [单元测试](#单元测试)
   - [序列化](#序列化)
   - [实用工具](#实用工具)
 
@@ -327,6 +328,29 @@ event:Add(Delegate.New(nil, EventFun2))
 event:Invoke()
 ```
 
+## 单元测试
+引入库之后，既可使用单元测试模块:  
+单元测试以模块为单位，一个模块就是一项测试，一般测试放在Test文件夹中
+```lua
+if _DEBUG then
+    unittest({
+        require_test "Test.IOFileTest",
+        require_test "Test.IOPathTest",
+        require_test "Test.StringAndBuilderTest",
+        require_test "Test.EnumTest",
+        require_test "Test.DelegateEventsTest",
+        require_test "Test.ExceptionTest",
+        require_test "Test.OOPTest",
+        require_test "Test.BitConverterTest",
+        require_test "Test.Container.ListTest",
+        require_test "Test.Container.DictionaryTest",
+        require_test "Test.Container.StackTest",
+        require_test "Test.Container.QueueTest",
+        require_test "Test.SerializerTest",
+    })
+end
+```
+在进行单元测试时最好使用`_DEBUG`来确定是否执行。  
 ## 序列化
 * 序列化方法，将lua表转换为字符串，或将字符串反序列化为lua语句/表
 * Lua表的拓展功能，数组拷贝、深拷贝等
