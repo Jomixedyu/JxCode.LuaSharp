@@ -64,6 +64,5 @@ SysLib.Delegate = require "SysLib.Delegate"    if _SMPL then Delegate  = SysLib.
 SysLib.Convert = require "SysLib.Convert"      if _SMPL then Convert   = SysLib.Convert   end
 SysLib.Activator = require "SysLib.Activator"  if _SMPL then Activator = SysLib.Activator end
 
-if _DEBUG then
-    require "SysLib.UnitTest"
-end
+
+require "SysLib.UnitTest"

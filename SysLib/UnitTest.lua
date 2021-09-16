@@ -26,4 +26,5 @@ function unittest(tb)
         )
     end
     print(string.format("--------unit fail list %d/%d : --------\n    %s", #errlist, #tb, table.concat(errlist, "\n    ")))
+    print("--------------------------------------")
 end
