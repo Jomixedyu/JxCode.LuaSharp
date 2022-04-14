@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.IndexOutOfRangeException : SysLib.Exception
-local IndexOutOfRangeException, base = class.extends("SysLib.IndexOutOfRangeException", SysLib.Exception)
+local IndexOutOfRangeException, base = class.define("SysLib.IndexOutOfRangeException", SysLib.Exception)
 
 
 return IndexOutOfRangeException

@@ -5,7 +5,7 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.Queue : SysLib.Object
-local Queue, base = class.extends("SysLib.Collections.Queue", SysLib.Object)
+local Queue, base = class.define("SysLib.Collections.Queue", SysLib.Object)
 
 function Queue:constructor()
     self._list = {}

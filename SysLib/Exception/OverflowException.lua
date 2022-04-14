@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.OverflowException : SysLib.Exception
-local OverflowException, base = class.extends("SysLib.OverflowException", SysLib.Exception)
+local OverflowException, base = class.define("SysLib.OverflowException", SysLib.Exception)
 
 
 return OverflowException

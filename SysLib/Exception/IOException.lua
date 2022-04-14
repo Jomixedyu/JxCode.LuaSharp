@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.IOException : SysLib.Exception
-local IOException, base = class.extends("SysLib.IOException", SysLib.Exception)
+local IOException, base = class.define("SysLib.IOException", SysLib.Exception)
 
 
 return IOException

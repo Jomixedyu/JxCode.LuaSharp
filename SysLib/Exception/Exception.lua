@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.Exception : SysLib.Object
-local Exception = class.extends("SysLib.Exception", SysLib.Object)
+local Exception = class.define("SysLib.Exception", SysLib.Object)
 
 function Exception:constructor(message)
     self.m_message = message or String.Empty()

@@ -5,7 +5,7 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Text.StringBuilder : SysLib.Object
-local StringBuilder, base = class.extends("SysLib.Text.StringBuilder", SysLib.Object)
+local StringBuilder, base = class.define("SysLib.Text.StringBuilder", SysLib.Object)
 SysLib.Text.StringBuilder = StringBuilder
 
 function StringBuilder:constructor()

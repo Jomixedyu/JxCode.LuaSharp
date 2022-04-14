@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.NullReferenceException : SysLib.Exception
-local NullReferenceException, base = class.extends("SysLib.NullReferenceException", SysLib.Exception)
+local NullReferenceException, base = class.define("SysLib.NullReferenceException", SysLib.Exception)
 
 
 return NullReferenceException

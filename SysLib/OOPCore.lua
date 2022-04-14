@@ -4,7 +4,7 @@
 --- Description  : 基础函数
 ---    核心关键字
 ---        class.static(name) 静态类
----        class.extends(name, base) 类形声明
+---        class.define(name, base) 类形声明
 ---        gettype(Class) 获取类型
 ---        instanceof(inst, Class) 判断对象是否是某类或子类的实例
 ---        istype(obj, type) ---判断实例是否为某类型或某类型的子类
@@ -52,7 +52,7 @@ end
 ---@param className string
 ---@param base class
 ---@param classType ClassType
-function class.extends(className, base)
+function class.define(className, base)
 
     --类型，原型
     local _class = {}

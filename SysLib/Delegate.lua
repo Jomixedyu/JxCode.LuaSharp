@@ -6,7 +6,7 @@
 ------------------------------------------------
 ---@class SysLib.Delegate : SysLib.Object
 ---@field New fun(target, method):SysLib.Delegate
-local Delegate, base = class.extends("SysLib.Delegate", SysLib.Object)
+local Delegate, base = class.define("SysLib.Delegate", SysLib.Object)
 
 function Delegate:constructor(target, method)
     self.target = target

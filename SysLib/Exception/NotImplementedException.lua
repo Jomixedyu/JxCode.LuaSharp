@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.NotImplementedException : SysLib.Exception
-local NotImplementedException, base = class.extends("SysLib.NotImplementedException", SysLib.Exception)
+local NotImplementedException, base = class.define("SysLib.NotImplementedException", SysLib.Exception)
 
 
 return NotImplementedException

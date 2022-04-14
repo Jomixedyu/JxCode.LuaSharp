@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.ArgumentNullException : SysLib.ArgumentException
-local ArgumentNullException, base = class.extends("SysLib.ArgumentNullException", SysLib.ArgumentException)
+local ArgumentNullException, base = class.define("SysLib.ArgumentNullException", SysLib.ArgumentException)
 
 
 return ArgumentNullException

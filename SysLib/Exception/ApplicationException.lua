@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.ApplicationException : SysLib.Exception
-local ApplicationException, base = class.extends("SysLib.ApplicationException", SysLib.Exception)
+local ApplicationException, base = class.define("SysLib.ApplicationException", SysLib.Exception)
 
 
 return ApplicationException

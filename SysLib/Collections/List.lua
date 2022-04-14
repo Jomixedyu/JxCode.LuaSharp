@@ -5,7 +5,7 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.List : SysLib.Object
-local List, base = class.extends("SysLib.Collections.List", SysLib.Object)
+local List, base = class.define("SysLib.Collections.List", SysLib.Object)
 
 function List:constructor()
     self.m_arr = {}

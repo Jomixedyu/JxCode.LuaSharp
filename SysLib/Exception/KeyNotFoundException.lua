@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.KeyNotFoundException : SysLib.Exception
-local KeyNotFoundException, base = class.extends("SysLib.KeyNotFoundException", SysLib.Exception)
+local KeyNotFoundException, base = class.define("SysLib.KeyNotFoundException", SysLib.Exception)
 
 
 return KeyNotFoundException

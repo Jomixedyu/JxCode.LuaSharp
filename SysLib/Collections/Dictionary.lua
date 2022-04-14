@@ -5,7 +5,7 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.Dictionary : SysLib.Object
-local Dictionary, base = class.extends("SysLib.Collections.Dictionary", SysLib.Object)
+local Dictionary, base = class.define("SysLib.Collections.Dictionary", SysLib.Object)
 
 local function indexof(table, key)
     for index, value in ipairs(table) do

@@ -6,7 +6,7 @@
 ------------------------------------------------
 ---@class SysLib.Object
 ---@field new fun()
-local Object = class.extends("SysLib.Object")
+local Object = class.define("SysLib.Object")
 
 --为了更好的智能提示，在Object中添加了New，但会覆盖原有的New方法
 --所以先保存起来，然后在调用，本方法仅有在执行Object.New时才会执行，尽管这没有意义

@@ -6,7 +6,7 @@
 ------------------------------------------------
 ---@class SysLib.Type : SysLib.Object
 ---@field New fun(name, protoType, baseProtoType)
-local Type, base = class.extends("SysLib.Type", SysLib.Object)
+local Type, base = class.define("SysLib.Type", SysLib.Object)
 
 function Type:constructor(name, protoType, baseProtoType)
     self.m_name = name

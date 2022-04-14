@@ -42,17 +42,17 @@ require "SysLib._include"
 其中```SYSLIB_SIMPLENAME = true```可以让该库中的类使用短名称，正常情况下使用类需要使用完全限定名如```System.Collection.List.new()```，如果在加载库前将该全局变量设置为true则可以使用短名称```List.new()```
 
 ## 类型与对象
-类使用class.extends关键字来继承，一个lua模块对应一个类，基类是可选的，如果不写则继承于SysLib.Object
+类使用class.define关键字来继承，一个lua模块对应一个类，基类是可选的，如果不写则继承于SysLib.Object
 ```lua
-class.extends(类名, 基类)
+class.define(类名, 基类)
 ```
 为了标识每个类的不同，可以采用路径全名的命名方式来声明。
 ```lua
-local List, base = class.extends("SysLib.Collections.List", Object)
+local List, base = class.define("SysLib.Collections.List", Object)
 ```
 自定义类型声明
 ```lua
-local TestClass, base = class.extends("TestClass", Object)
+local TestClass, base = class.define("TestClass", Object)
 --构造函数
 function TestClass:constructor()
     base.constructor(self)
@@ -163,7 +163,7 @@ AnimalType = {
 ## 运算符重载
 ```lua
 ---@class TestClass
-local TestClass, base = class.extends("TestClass", Object)
+local TestClass, base = class.define("TestClass", Object)
 
 function TestClass:constructor(n1)
     self.n = n1
@@ -312,7 +312,7 @@ delegate:Invoke(2)
 ```
 有实例的函数委托
 ```lua
-local TestObject = class.extends("Test.TestObject", Object)
+local TestObject = class.define("Test.TestObject", Object)
 function TestObject:SetNumber(i)
     Console.WriteLine("SetNumber:", i)
 end

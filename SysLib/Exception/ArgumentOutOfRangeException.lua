@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.ArgumentOutOfRangeException : SysLib.ArgumentException
-local ArgumentOutOfRangeException, base = class.extends("SysLib.ArgumentOutOfRangeException", SysLib.ArgumentException)
+local ArgumentOutOfRangeException, base = class.define("SysLib.ArgumentOutOfRangeException", SysLib.ArgumentException)
 
 
 return ArgumentOutOfRangeException

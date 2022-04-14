@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.TimeoutException : SysLib.Exception
-local TimeoutException, base = class.extends("SysLib.TimeoutException", SysLib.Exception)
+local TimeoutException, base = class.define("SysLib.TimeoutException", SysLib.Exception)
 
 
 return TimeoutException

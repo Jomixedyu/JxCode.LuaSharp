@@ -14,7 +14,7 @@ assert(SetAge1Rst == 2)
 --实例委托
 local SetNumberRst
 
-local TestObject = class.extends("Test.TestObject", Object)
+local TestObject = class.define("Test.TestObject", Object)
 function TestObject:SetNumber(i)
     SetNumberRst = i
 end

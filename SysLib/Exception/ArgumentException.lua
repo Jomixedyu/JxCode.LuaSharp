@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.ArgumentException : SysLib.Exception
-local ArgumentException, base = class.extends("SysLib.ArgumentException", SysLib.Exception)
+local ArgumentException, base = class.define("SysLib.ArgumentException", SysLib.Exception)
 
 
 return ArgumentException

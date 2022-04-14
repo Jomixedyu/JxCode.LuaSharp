@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.Event : SysLib.Object
-local Event = class.extends("SysLib.Event", SysLib.Object)
+local Event = class.define("SysLib.Event", SysLib.Object)
 
 function Event:constructor()
     self.multiDelegate = SysLib.Collections.List.new()

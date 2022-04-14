@@ -6,7 +6,7 @@
 ------------------------------------------------
 
 ---@class SysLib.DateTime : SysLib.Object
-local DateTime, base = class.extends("SysLib.DateTime", SysLib.Object)
+local DateTime, base = class.define("SysLib.DateTime", SysLib.Object)
 
 function DateTime:constructor(near, mouth, day, hour, min, sec)
     self.m_near = near or 0

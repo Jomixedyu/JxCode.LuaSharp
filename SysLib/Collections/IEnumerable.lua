@@ -6,7 +6,7 @@
 ------------------------------------------------
 ---
 ---@class SysLib.IEnumerable : SysLib.Object
-local IEnumerable, base = class.extends("SysLib.Collections.IEnumerable", SysLib.Object)
+local IEnumerable, base = class.define("SysLib.Collections.IEnumerable", SysLib.Object)
 
 function each(ienumerable)
     return ienumerable:GetEnumerator()

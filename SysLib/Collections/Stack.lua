@@ -5,7 +5,7 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Collections.Stack : SysLib.Object
-local Stack = class.extends("SysLib.Collections.Stack", SysLib.Object)
+local Stack = class.define("SysLib.Collections.Stack", SysLib.Object)
 
 function Stack:constructor()
     self._list = {}
