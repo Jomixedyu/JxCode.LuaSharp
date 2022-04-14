@@ -39,7 +39,7 @@
 SYSLIB_SIMPLENAME = true
 require "SysLib._include"
 ```
-其中```SYSLIB_SIMPLENAME = true```可以让该库中的类使用短名称，正常情况下使用类需要使用完全限定名如```System.Collection.List.New()```，如果在加载库前将该全局变量设置为true则可以使用短名称```List.New()```
+其中```SYSLIB_SIMPLENAME = true```可以让该库中的类使用短名称，正常情况下使用类需要使用完全限定名如```System.Collection.List.new()```，如果在加载库前将该全局变量设置为true则可以使用短名称```List.new()```
 
 ## 类型与对象
 类使用class.extends关键字来继承，一个lua模块对应一个类，基类是可选的，如果不写则继承于SysLib.Object
@@ -68,8 +68,14 @@ return TestClass
 
 实例化
 ```lua
-local tc = TestClass.New()
+local tc = TestClass.new()
 ```
+或者
+```lua
+local tc = TestClass()
+```
+如果给类型添加
+
 支持type对比，gettype为本框架的类型获取关键字
 ```lua
 tc:GetType() == gettype(TestClass) -- true
@@ -114,7 +120,7 @@ local str = String.Replace("Hello World", "World", "God")
 ```
 字符串构建 StringBuilder类
 ```lua
-local sb = StringBuilder.New()
+local sb = StringBuilder.new()
 sb:Append("you")
 sb:Append(" and ")
 sb:Append("me")
@@ -158,7 +164,7 @@ end
 
 ---运算符重载
 function TestClass.operatorAdd(target, target2)
-    return TestClass.New(target.n + target2.n)
+    return TestClass.new(target.n + target2.n)
 end
 
 return TestClass
@@ -201,7 +207,7 @@ lua默认的迭代器只可以对table进行访问，但是该库的四大容器
 ## 容器
 常用的List和Dictionary实现了GetEnumerator方法，可以直接使用each迭代器，同时也支持lua原版的ipairs与pairs迭代器，并且容器拥有ForEach方法迭代器。  
 ```lua
-local arr = List.New()
+local arr = List.new()
 arr:Add("苟利国家生死以")
 arr:Add("岂因祸福避趋之")
 --三种遍历方式 都可以
@@ -227,9 +233,9 @@ end
 ## 抛出异常与捕捉异常
 ```lua
 local function TestFunction()
-    throw(ArgumentException.New("参数错误"))
-    -- throw(IOException.New("文件打开错误"))
-    -- throw(IndexOutOfRangeException.New("下标越界"))
+    throw(ArgumentException.new("参数错误"))
+    -- throw(IOException.new("文件打开错误"))
+    -- throw(IndexOutOfRangeException.new("下标越界"))
     -- throw(8)
     -- error("遇到了一个错误")
 end
@@ -293,7 +299,7 @@ end)
 local function SetAge1(i)
     Console.WriteLine("setAge1:", i)
 end
-local delegate = Delegate.New(nil, SetAge1)
+local delegate = Delegate.new(nil, SetAge1)
 --使用Invoke调用
 delegate:Invoke(2)
 ```
@@ -304,9 +310,9 @@ function TestObject:SetNumber(i)
     Console.WriteLine("SetNumber:", i)
 end
 
-local testObj = TestObject.New()
+local testObj = TestObject.new()
 --提供实例
-local deleg = Delegate.New(testObj, TestObject.SetNumber)
+local deleg = Delegate.new(testObj, TestObject.SetNumber)
 --不光可以使用Invoke，还可以直接用()
 deleg(5)
 ```
@@ -322,9 +328,9 @@ local function EventFun2()
     Console.WriteLine("EventFun2")
 end
 
-local event = Event.New()
+local event = Event.new()
 event:Add(nil, EventFun1)
-event:Add(Delegate.New(nil, EventFun2))
+event:Add(Delegate.new(nil, EventFun2))
 event:Invoke()
 ```
 

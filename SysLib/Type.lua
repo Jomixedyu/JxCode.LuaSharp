@@ -57,7 +57,7 @@ function Type:IsSubclassOf(type)
 end
 
 --延迟注册Object的Type，与Type的Type
-class.__appTypes["SysLib.Object"] = Type.New("SysLib.Object", SysLib.Object)
-class.__appTypes["SysLib.Type"] = Type.New("SysLib.Type", Type, SysLib.Object)
+class.__appTypes["SysLib.Object"] = Type.new("SysLib.Object", SysLib.Object)
+class.__appTypes["SysLib.Type"] = Type.new("SysLib.Type", Type, SysLib.Object)
 
 return Type

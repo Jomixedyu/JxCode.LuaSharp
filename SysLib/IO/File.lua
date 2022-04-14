@@ -20,7 +20,7 @@ end
 ---@param path string
 ---@return SysLib.Collections.List
 function File.ReadAllLines(path)
-    local strs = SysLib.Collections.List.New()
+    local strs = SysLib.Collections.List.new()
     for line in io.lines(path) do
         strs:Add(line)
     end

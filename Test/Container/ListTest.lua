@@ -1,5 +1,5 @@
 
-local list = List.New()
+local list = List.new()
 list:Add("i1")
 list:Add("i2")
 list:Add(nil)

@@ -4,11 +4,12 @@
 --- Description  : Events
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
+
 ---@class SysLib.Event : SysLib.Object
 local Event = class.extends("SysLib.Event", SysLib.Object)
 
 function Event:constructor()
-    self.multiDelegate = SysLib.Collections.List.New()
+    self.multiDelegate = SysLib.Collections.List.new()
 end
 
 ---@overload fun(delegate)
@@ -16,12 +17,12 @@ function Event:Add(target, method)
     if not method then
         --delegate
         if target:GetType() ~= gettype(SysLib.Delegate) then
-            throw(SysLib.ArgumentException.New("type error"))
+            throw(SysLib.ArgumentException.new("type error"))
         end
         self.multiDelegate:Add(target)
         return
     end
-    self.multiDelegate:Add(SysLib.Delegate.New(target, method))
+    self.multiDelegate:Add(SysLib.Delegate.new(target, method))
 end
 
 ---@overload fun(delegate)
@@ -30,7 +31,7 @@ function Event:Remove(target, method)
     if not method then
         --delegate
         if target:GetType() ~= gettype(SysLib.Delegate) then
-            throw(SysLib.ArgumentException.New("type error"))
+            throw(SysLib.ArgumentException.new("type error"))
         end
         self.multiDelegate:Remove(target)
         return

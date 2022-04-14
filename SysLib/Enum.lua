@@ -4,6 +4,7 @@
 --- Description  : 
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
+
 ---@class SysLib.Enum
 local Enum = class.static("SysLib.Enum")
 

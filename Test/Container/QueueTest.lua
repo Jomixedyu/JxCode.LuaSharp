@@ -1,4 +1,4 @@
-local queue = Queue.New()
+local queue = Queue.new()
 
 queue:Enqueue("v1")
 queue:Enqueue("v2")

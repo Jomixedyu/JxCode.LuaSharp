@@ -2,9 +2,9 @@
 local errCode = 0
 
 local function TestFunction()
-    throw(ArgumentException.New("参数错误"))
-    -- throw(IOException.New("文件打开错误"))
-    -- throw(IndexOutOfRangeException.New("下标越界"))
+    throw(ArgumentException.new("参数错误"))
+    -- throw(IOException.new("文件打开错误"))
+    -- throw(IndexOutOfRangeException.new("下标越界"))
     -- throw(8)
     -- error("遇到了一个错误")
 end

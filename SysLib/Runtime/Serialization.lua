@@ -15,7 +15,7 @@ function Serialization.Serialize(obj)
 
     local level = 0
     local isInit = false
-    local sb = SysLib.Text.StringBuilder.New()
+    local sb = SysLib.Text.StringBuilder.new()
     local ser
 
     ser = function(target)

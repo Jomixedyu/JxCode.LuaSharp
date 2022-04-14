@@ -9,7 +9,7 @@ local Activator = class.static("SysLib.Activator")
 ---@param type Type
 ---@param ... Object
 function Activator.CreateInstance(type, ...)
-    return type.m_protoType.New(...)
+    return type.m_protoType.new(...)
 end
 
 return Activator

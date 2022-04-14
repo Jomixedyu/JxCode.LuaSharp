@@ -12,6 +12,7 @@
 ---        isappinstance(instance) 检查对象是否为框架内实例
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
+
 local getmetatable = getmetatable
 local setmetatable = setmetatable
 local rawget = rawget
@@ -22,8 +23,8 @@ class = {}
 ---类/实例 枚举
 ---@class ClassType
 class.ClassType = {
-    Class = "Class",
-    Instance = "Instance",
+    Class = 0,
+    Instance = 1,
 }
 
 --类型字典：每个class的Type是唯一的 字典结构<string, Type>
@@ -44,7 +45,7 @@ end
 function class.static(className)
     className = className or getRandomClassName()
     local tb = {}
-    class.__appTypes[className] = SysLib.Type.New(className, tb)
+    class.__appTypes[className] = SysLib.Type.new(className, tb)
     return tb
 end
 
@@ -80,7 +81,7 @@ function class.extends(className, base)
     --如果Type初始化了就注册，没初始化说明本次是第一次执行（Object）或第二次执行（Type）
     --随后将在Type类型准备完毕后，对Object和Type进行延迟注册
     if SysLib.Type then
-        local type = SysLib.Type.New(_className, _class, base)
+        local type = SysLib.Type.new(_className, _class, base)
         --注册进应用程序域
         class.__appTypes[_className] = type
     end
@@ -89,7 +90,8 @@ function class.extends(className, base)
     setmetatable(_class, classMeta)
     
     --类型的实例化方法
-    _class.New = function(...)
+    
+    classMeta.__call = function(t, ...)
 
         local instanceMetatable = {}
         --继承
@@ -132,7 +134,9 @@ function class.extends(className, base)
 
         return obj
     end
-
+    _class.new = function(...)
+        return classMeta.__call(nil, ...)
+    end
     return _class, base
 end
 

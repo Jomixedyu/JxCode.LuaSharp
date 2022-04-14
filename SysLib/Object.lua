@@ -5,14 +5,14 @@
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 ---@class SysLib.Object
----@field New fun()
+---@field new fun()
 local Object = class.extends("SysLib.Object")
 
 --为了更好的智能提示，在Object中添加了New，但会覆盖原有的New方法
 --所以先保存起来，然后在调用，本方法仅有在执行Object.New时才会执行，尽管这没有意义
-local _new = Object.New
+local _new = Object.new
 ---@return self
-function Object.New()
+function Object.new()
     return _new()
 end
 

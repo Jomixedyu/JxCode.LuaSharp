@@ -1,4 +1,4 @@
-local stack = Stack.New()
+local stack = Stack.new()
 
 stack:Push("v1")
 stack:Push("v2")

@@ -24,10 +24,10 @@ function Convert.ToBoolean(v)
         elseif str == "false" then
             return false
         else
-            throw(SysLib.ArgumentException.New("value is not true or false"))
+            throw(SysLib.ArgumentException.new("value is not true or false"))
         end
     else
-        throw(SysLib.ArgumentException.New("Type Error"))
+        throw(SysLib.ArgumentException.new("Type Error"))
     end
 end
 

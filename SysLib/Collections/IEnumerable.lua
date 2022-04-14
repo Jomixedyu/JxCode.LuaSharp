@@ -13,7 +13,7 @@ function each(ienumerable)
 end
 
 function IEnumerable:GetEnumerator()
-    throw(SysLib.NotImplementedException.New())
+    throw(SysLib.NotImplementedException.new())
 end
 
 return IEnumerable

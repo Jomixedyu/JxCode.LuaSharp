@@ -1,4 +1,4 @@
-local dict = Dictionary.New()
+local dict = Dictionary.new()
 
 dict:Add("user1", 1)
 dict:Add("user2", 2)

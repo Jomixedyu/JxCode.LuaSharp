@@ -64,7 +64,7 @@ end
 
 ---@return SysLib.Collections.List
 function List:Clone()
-    local list = List.New()
+    local list = List.new()
     for i = 1, self.m_count do
         list:Add(self.m_arr[i])
     end

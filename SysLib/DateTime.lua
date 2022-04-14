@@ -4,6 +4,7 @@
 --- Description  : 时间与日期操作类
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
+
 ---@class SysLib.DateTime : SysLib.Object
 local DateTime, base = class.extends("SysLib.DateTime", SysLib.Object)
 
@@ -23,7 +24,7 @@ function DateTime.Now()
     local H = os.date("%H")
     local M = os.date("%M")
     local S = os.date("%S")
-    return DateTime.New(n, m, d, H, M, S)
+    return DateTime.new(n, m, d, H, M, S)
 end
 
 function DateTime:ToString()

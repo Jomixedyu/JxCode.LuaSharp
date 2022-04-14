@@ -4,6 +4,7 @@
 --- Description  : 字符串处理
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
+
 local String = {}
 
 local empty = ""
@@ -99,7 +100,7 @@ end
 ---从字符数组创建字符串
 ---@param charArray table
 ---@return string
-function String.New(charArray)
+function String.new(charArray)
     return string.char(table.unpack(charArray))
 end
 

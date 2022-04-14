@@ -1,3 +1,4 @@
+
 local Person = class.extends("Test.OOPTest.Person", SysLib.Object)
 function Person:constructor(name, age)
     self.name = name
@@ -13,7 +14,8 @@ function Student:ToString() --override const
     return string.format("name: %s, age: %s, score: %s", self.name, tostring(self.age), tostring(self.score))
 end
 
-local zhangsan = Student.New("zhangsan", 24, 100)
+local zhangsan = Student("zhangsan", 24, 100)
+
 -- Activator.CreateInstance(gettype(Student), "zhangsan", 24, 100)
 
 assert(zhangsan:ToString() == "name: zhangsan, age: 24, score: 100")

@@ -48,11 +48,11 @@ assert(
     )
 )
 
-local newStr = String.New(strCharArr)
+local newStr = String.new(strCharArr)
 assert(newStr == str)
 
 -- StringBuilder
-local sb = StringBuilder.New()
+local sb = StringBuilder.new()
 sb:AppendLine("hello")
 sb:Append("world")
 assert(sb:ToString() == "hello\nworld")
