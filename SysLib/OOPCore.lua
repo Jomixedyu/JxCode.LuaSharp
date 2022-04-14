@@ -6,10 +6,8 @@
 ---        class.static(name) 静态类
 ---        class.extends(name, base) 类形声明
 ---        gettype(Class) 获取类型
----        isinstance(obj) 判断是否为实例对象
+---        instanceof(inst, Class) 判断对象是否是某类或子类的实例
 ---        istype(obj, type) ---判断实例是否为某类型或某类型的子类
----        isapptype(type) 检查类型是否为框架内类型
----        isappinstance(instance) 检查对象是否为框架内实例
 --- https://github.com/JomiXedYu/JxCode.LuaSharp
 ------------------------------------------------
 
@@ -141,7 +139,7 @@ function class.extends(className, base)
 end
 
 
----获取类的类型 功能就是typeof，怕typeof冲突可以用这个
+---获取类的Type
 ---@return SysLib.Type
 function gettype(_class)
     if _class == nil then
@@ -154,13 +152,8 @@ function gettype(_class)
     return class.__appTypes[meta.__className]
 end
 
----是否为实例对象
----@return boolean
-function isinstance(target)
-    local m = getmetatable(target)
-    if m.__classType then
-        return m.__classType == class.ClassType.Instance
-    end
+function instanceof(inst, Class)
+    return istype(inst, gettype(Class))
 end
 
 ---判断实例是否为某类型或某类型的子类
@@ -177,7 +170,7 @@ end
 ---判断类型是否存在于框架与程序之中
 ---@param type SysLib.Type
 ---@return boolean
-function isapptype(type)
+function class.isapptype(type)
     if not type then
         return false
     end
@@ -191,12 +184,12 @@ end
 
 ---判断实例对象是是否存在于框架与程序之中
 ---@return boolean
-function isappinstance(instance)
+function class.isappinstance(instance)
     if not instance then
         return false
     end
     if not instance.GetType then
         return false
     end
-    return isapptype(instance:GetType())
+    return class.isapptype(instance:GetType())
 end

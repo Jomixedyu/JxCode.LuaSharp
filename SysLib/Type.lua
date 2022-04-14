@@ -35,16 +35,25 @@ end
 ---@param obj SysLib.Object 目标对象
 ---@return boolean
 function Type:IsInstanceOfType(obj)
-    return obj:GetType():IsSubclassOf(self)
+    ---@type SysLib.Type
+    local targetType = obj:GetType()
+    if self == targetType then
+        return true
+    end
+
+    return targetType:IsSubclassOf(self)
 end
 
 ---确定当前 Type 是否派生自指定的 Type。
 ---@param type SysLib.Type 指定类型
 ---@return boolean
 function Type:IsSubclassOf(type)
-    local proto = self
 
-    --如果等于基类则返回，不等于则继续向基类查找
+    if self == type then
+        return false
+    end
+
+    local proto = self:GetBaseType()
     while proto do
         if proto == type then
             return true

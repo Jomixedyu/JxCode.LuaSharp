@@ -80,12 +80,19 @@ local tc = TestClass()
 ```lua
 tc:GetType() == gettype(TestClass) -- true
 ```
-判断一个实例是否属于类型：  
+判断一个实例是否属于类型（包含派生）：  
 ```lua
-istype(tc, TestClass) --true
-istype(tc, Object) --true
-istype(tc, Human) --false
+istype(tc, gettype(TestClass)) --true
+istype(tc, gettype(Object)) --true
+istype(tc, gettype(Human)) --false
 ```
+或者使用Class而不是Type
+```lua
+instanceof(tc, TestClass) --true
+instanceof(tc, Object) --true
+instanceof(tc, Human) --false
+```
+
 对继承类型判定
 ```lua
 --确定 Type 是否派生自 Object
